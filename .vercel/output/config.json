@@ -1,0 +1,75 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "/pages/About_us",
+			"dest": "/pages/About_us/"
+		},
+		{
+			"src": "/pages/About_us/",
+			"status": 308,
+			"headers": {
+				"Location": "/pages/About_us"
+			}
+		},
+		{
+			"src": "/pages/Etude&Metier",
+			"dest": "/pages/Etude&Metier/"
+		},
+		{
+			"src": "/pages/Etude&Metier/",
+			"status": 308,
+			"headers": {
+				"Location": "/pages/Etude&Metier"
+			}
+		},
+		{
+			"src": "/pages/Recrutement",
+			"dest": "/pages/Recrutement/"
+		},
+		{
+			"src": "/pages/Recrutement/",
+			"status": 308,
+			"headers": {
+				"Location": "/pages/Recrutement"
+			}
+		},
+		{
+			"src": "/pages/Urgence_que_faire",
+			"dest": "/pages/Urgence_que_faire/"
+		},
+		{
+			"src": "/pages/Urgence_que_faire/",
+			"status": 308,
+			"headers": {
+				"Location": "/pages/Urgence_que_faire"
+			}
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		}
+	],
+	"overrides": {
+		"index.html": {
+			"path": ""
+		},
+		"pages/About_us.html": {
+			"path": "pages/About_us"
+		},
+		"pages/Etude&Metier.html": {
+			"path": "pages/Etude&Metier"
+		},
+		"pages/Recrutement.html": {
+			"path": "pages/Recrutement"
+		},
+		"pages/Urgence_que_faire.html": {
+			"path": "pages/Urgence_que_faire"
+		}
+	}
+}
