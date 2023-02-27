@@ -12,7 +12,8 @@
                */
             let articles = []
             
-          onMount(async function() {
+          
+          const fetchNews = onMount(async function() {
                 const response = await fetch(apiHealthURL);
                 const json = await response.json();                
                 articles = json["articles"]; 
@@ -20,9 +21,9 @@
             // @ts-ignore
 
             onMount(() =>{
-                fetchNews()
+                fetchNews
                 const interval = setInterval(()=>{
-                    fetchNews()
+                    fetchNews
                 }, 1000 * 60 * 60);
 
                 return () => clearInterval(interval)
@@ -215,13 +216,13 @@
                 </div>
               </div>
               <div>
-                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative left-[12vw]">Plus de <Compteur initialValue={0} maxValue={500000} animationDuration={2200} />  patients prise en charge</p>
-                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative top-[6.75000002953vw] left-[18vw]"><Compteur initialValue={0} maxValue={351363} animationDuration={1500} />  consultations</p>
-                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative left-[60vw] bottom-[1.12500000492vw]"><Compteur initialValue={0} maxValue={71455} animationDuration={2500} />  hospitalisations</p>
-                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative top-[7.31250003199vw] left-[3vw]"> <Compteur initialValue={0} maxValue={700} animationDuration={1000} /> projets de recherche</p>
-                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative left-[50vw] "><Compteur initialValue={0} maxValue={82425} animationDuration={3200} />  passages aux urgences</p>
-                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative left-[45vw] top-[4.50000001969vw]"><Compteur initialValue={0} maxValue={1079} animationDuration={1300} />  publications scientifiques</p>
-                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative top-[8.43750003691vw] left-[5vw]">Près de <Compteur initialValue={0} maxValue={5000} animationDuration={2000} />  professionnels</p>
+                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative left-[12vw]">Plus de <Compteur maxValue={500000} animationDuration={2200} />  patients prise en charge</p>
+                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative top-[6.75000002953vw] left-[18vw]"><Compteur  maxValue={351363} animationDuration={1500} />  consultations</p>
+                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative left-[60vw] bottom-[1.12500000492vw]"><Compteur  maxValue={71455} animationDuration={2500} />  hospitalisations</p>
+                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative top-[7.31250003199vw] left-[3vw]"> <Compteur  maxValue={700} animationDuration={1000} /> projets de recherche</p>
+                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative left-[50vw] "><Compteur  maxValue={82425} animationDuration={3200} />  passages aux urgences</p>
+                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative left-[45vw] top-[4.50000001969vw]"><Compteur  maxValue={1079} animationDuration={1300} />  publications scientifiques</p>
+                <p class="text-[2.5vw] w-min whitespace-nowrap flex flex-row align-bottom relative top-[8.43750003691vw] left-[5vw]">Près de <Compteur  maxValue={5000} animationDuration={2000} />  professionnels</p>
               </div>
               <div class="flex justify-end relative top-[9.56250004184vw] right-[4vw]">
                 <div class=" w-[4vw] h-[4vw]"  style="background-color : {color}">

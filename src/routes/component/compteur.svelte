@@ -3,6 +3,7 @@
 
   export let maxValue = 100;
   export let count = 0;
+  export const initialValue = 0;
   export let animationDuration = 3000;
   /**
    * @type {number | null}
