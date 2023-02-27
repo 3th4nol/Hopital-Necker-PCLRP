@@ -1,0 +1,65 @@
+<script>
+  let toggle = true
+let color = 'white'
+function toggleColor() {
+ color = 'black'
+}
+
+ $: color = toggle ? 'white' : 'black'
+
+</script>
+
+<div class=" absolute right-[0.5vw] top-[0.5vw] z-50">
+
+{#if toggle === true}
+
+<button class="w-[1.5vw] h-[1.5vw] border-[0.1vw] p-[1.25vw] border-[#232323]  rounded-full" on:click={() => toggle = !toggle} on:click={toggleColor}>
+<i  class="text-[1.75vw] text-[#232323] relative sm:bottom-[3.5vw] md:bottom-[2.5vw] lg:bottom-[1.25vw] right-[0.8vw] " >☾</i>
+</button>
+{:else}
+<button class="w-[1.5vw] h-[1.5vw] border-[0.1vw] p-[1.25vw] border-[#FFFFFF] rounded-full" on:click={() => toggle = !toggle} on:click={toggleColor}>
+<i class='text-[1.75vw]  text-[white] relative sm:bottom-[3.5vw] md:bottom-[2.5vw] lg:bottom-[1.25vw] right-[0.8vw]'>☼</i>
+</button>
+{/if}
+
+</div>
+
+<div class='bg-[#DCDCDC] w-[100vw] h-[100vh]'>
+<div class="flex justify-center"> 
+<nav class="flex justify-around text-[1.6vw] text-center items-center border-solid border-[0.1vw] w-[52.13vw] h-[6.1vw] rounded-[2.4479166666666665vw]" style="border-color : {color}; color : {color}">
+ <a href="/pages/About_us/"><li>A propos de <br>nous</li></a>
+ <a href="./Etude&Metier"><li>Etude /<br>Metier</li></a>
+ {#if color === 'white'}
+ <a href="./../"><img src="./../img/logo.png" alt="logo Necker" class="w-[4.7vw] h-[4.7vw]"></a>
+ {:else}
+ <a href="./../"><img src="./../img/logo-black.png" alt="logo Necker" class="w-[4.7vw] h-[4.7vw]"></a>
+ {/if}
+ <a href="./Urgence_que_faire"><li>Urgence <br> que faire</li></a>
+ <a href="./Recrutement"><li>Nous <br> recrutons</li></a>
+</nav>
+</div>
+<div style="color:{color}" class="w-[75vw] text-center text-[0.8vw] m-auto flex flex-col mt-[1.5vw] gap-[1.25vw]">
+  <h1>Repérer le problème</h1>
+  <p>Il faut faire une différence entre une urgence et une "urgence". Les urgences nécessite une intervention des secours <strong>urgentes</strong>. Par exemple, une arcade sourcilière ouverte saigne beaucoup, c’est très impressionnant, mais ce n’est pas grave et tu peux aller dans une pharmacie pour être soigné-e.</p>
+  <p>A l'inverse, il arrive d'avoir des situations qui néssécite une intervention où on ne voit pas le danger. C'est le cas d'une trop forte dose d'alcool dans le sang qui peut provoquerr un coma éthylique. De l'extérieur on pourrais croire que la personne dors alors, si tu n'arrive pas à la/le reveiller, il est possible que sa vie soit en danger</p>
+
+  <h1>Quels sont les gestes utiles</h1>
+  <p>1 : Assure-toi que l’espace est sécurisé, protège-toi d’abord avant de protéger l’autre. Si celui qui essaye de venir en aide se retrouve lui aussi en urgence vitale, ça devient compliqué et dangereux. Par exemple, si tu vois un incendie, ne te précipite-pas dans les flammes ! Reste en sécurité et appelle un numéro d’urgence.</p>
+  <p>2 : Appelle les secours ou demande à quelqu’un de le faire. Au cas où tu ne le savais pas : même sans crédit et/ou verrouillé un téléphone fonctionne toujours pour joindre les numéros d’urgence.</p>
+  <p>3 : Si c’est toi qui appelle les secours, ne raccroche pas tant qu’ils ne t’ont pas dit que tu peux le faire ! Si tu es seul(e), essaye de rester à côté de la personne blessée jusqu’à l’arrivée des secours si c’est sans danger pour toi, et d’appliquer les conseils que les secours te donneront par téléphone.</p>
+
+  <h1>Qui appeler ?</h1>
+  <p>15 : Le SAMU, Service d’Aide Médicale d’Urgence. Tu auras au bout du fil un médecin qui te dira ce que tu peux faire et qui enverra, si besoin, les pompiers.</p>
+  <p>17 : La Police. S’il y a un danger pour toi aussi, que quelqu’un a un comportement dangereux pour les autres ou lui-même, c’est le numéro à appeler.</p>
+  <p>18 : Les Pompiers. C’est le service qui va réagir le plus rapidement à l’urgence. Ils peuvent être là en quelques minutes. S’il y a le feu, ou si une personne doit aller immédiatement à l’hôpital, c’est eux qu’il faut appeler !</p>
+  <p>Le 112 : numéro d’urgence qui fonctionne dans tout l’espace européen, si jamais tu es dans un autre pays que la France et que tu ne connais pas le numéro officiel que tu souhaites joindre.</p>
+  <p>Le 114 : numéro d’appel d’urgence pour les personnes sourdes et malentendantes. Grâce à ce numéro unique, national, gratuit, accessible par visioconférence, tchat, mail, SMS ou fax, 24/24, 7/7 les agents du 114 vous répondent et contactent le service d’urgence adapté le plus proche de chez vous.</p>
+</div>
+</div>  
+<footer class="h-[11.2500000492vw] flex justify-center text-[1vw] bg-[#232323] text-white">
+      
+  <div class="text-white relative flex flex-col justify-center text-center gap-[4vw]">
+    <a href="https://discord.gg/cNTmSwmvfk" rel="noreferrer" target="_blank" class="">Nous recrutons</a>
+    <a  href="https://github.com/3th4nol"  rel="noreferrer" target="_blank">by @3th4nol</a>
+  </div>
+</footer>
